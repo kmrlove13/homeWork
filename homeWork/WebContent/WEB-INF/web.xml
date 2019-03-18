@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" metadata-complete="false" version="3.0">
+  <display-name>webStudy01</display-name>
+  <welcome-file-list>
+    <welcome-file>index.do</welcome-file>
+  </welcome-file-list>
+  
+  <context-param> 
+  	<param-name>appParam1</param-name>
+  	<param-value>파라미터값1</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>driverClassName</param-name>
+  	<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+  </context-param>
+	
+	<servlet>
+		<servlet-name>ImageFormServlet</servlet-name>
+		<servlet-class>kr.or.ddit.servlet01.ImageFormServlet</servlet-class>
+		<init-param>
+			<param-name>contentPath</param-name>
+			<param-value>d:/sample</param-value>
+		</init-param>
+	</servlet>  
+  	
+  	<servlet-mapping>
+  		<servlet-name>ImageFormServlet</servlet-name>
+		<url-pattern>/imageForm.do</url-pattern>
+  	</servlet-mapping>
+  <!--2분이 만료단위, 여기는 분단위로 설정-->
+  	<session-config>
+  		<session-timeout>2</session-timeout>
+<!--   		<cookie-config> -->
+<!--   			<name>mysession</name> -->
+<!--   		</cookie-config> -->
+  	</session-config>
+  <!--에러페이지 전역 처리방밥-->
+  	<error-page>
+  		<exception-type>java.lang.ArithmeticException</exception-type>
+  		<location>/errors/arithmeticError.jsp</location>
+  	</error-page>
+  <!--우선순위가 페이지에러 > 익셉션타입 -> 에러코드-->
+  	<error-page>
+		<error-code>500</error-code>
+  		<location>/errors/error500.jsp</location>
+  	</error-page>
+  
+</web-app>

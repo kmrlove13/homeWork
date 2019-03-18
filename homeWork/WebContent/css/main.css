@@ -1,0 +1,40 @@
+@charset "UTF-8";
+	#top{
+		width: 100%;
+		height: 70px;
+		background-color: blue;
+	}
+	
+	#top li{
+		float: left;
+		padding: 10px 20px 10px 20px; */
+		/*시계방향*/
+	}
+	
+	#left{
+		width: 20%;
+		height: 500px;
+		background-color: yellow;
+		float: left;
+	/*얘네들은 하나가 한줄을 다먹음,그래서 float으로 조절*/
+	}
+	
+	#content{
+		width: 79%;
+		height: 500px;
+		background-color: crimson;
+		float: right;
+		overflow: auto;
+		
+	}
+	
+	#footer{
+		width: 100%;
+		height: 50px;
+		background-color:green;
+		float: left;	
+	}
+	
+
+
+

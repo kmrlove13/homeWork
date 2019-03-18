@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>01/gugudanForm.html</title>
+</head>
+<body>
+	<h4>구구단의 범위 선택</h4>
+	<!--이폼을 통해서 입력한 값이 서버로 보낼수 있음, name이 요청파라미터, name이 서버로 감-->
+	<!--../gugudan.do ->> 매핑되는 주소를 기술(상대주소), 이주소는 상당히 위험한 방법 위치 이동할때마다 수정해야됨, 경로는 절대경로로 사용하기-->
+	<!-- <form action="http://localhost/webStudy01/gugudan.do"> 절대경로인데, localhost 작성 안해도됨-->
+	
+	<form action="/webStudy01/gugudan.do" method="post">
+		최소단 : <input type="text" name="minDan"/>
+		<!--눈으로 보여지는건 2단이지만, 서버로 값이 넘어가는건 value = 2-->
+		최대단 : <select name="maxDan">
+			<option value="2">2단</option>
+			<option value="3">3단</option>
+			<option value="4">4단</option>
+			<option value="5">5단</option>
+			<option value="6">6단</option>
+			<option value="7">7단</option>
+			<option value="8">8단</option>
+			<option value="9">9단</option>
+		</select>
+		<input type="submit" value="구구단"/>
+	</form>
+</body>
+</html>
