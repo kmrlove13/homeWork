@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<%@page import="kr.or.ddit.utils.CookieUtil"%>
 <%@page import="java.util.Objects"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html> 
+<%
+	//cookie가져오기
+	CookieUtil idCookie = new CookieUtil(request);
+	String id = idCookie.getCookieValue("idCookie");
+%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Insert title here</title>
-</head>
-<%
+<SCRIPT src="<%=request.getContextPath()%>/js/jquery-3.3.1.min.js"></SCRIPT>
+<SCRIPT type="text/javascript">
 
-	
-%>
+	$(function() {
+		
+		 if(id!=null){
+			$("[name='mem_id']").val('<%=id%>');
+			
+		} 
+	});
+
+
+
+</SCRIPT>
+
+
+</head>
 <body>
 	<!--form의 주소는 절대방식, -->
 	<form action ="<%=request.getContextPath() %>/login/loginCheck.jsp" method="post">
